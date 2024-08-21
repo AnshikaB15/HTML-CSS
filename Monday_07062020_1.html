@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>
+			JavaScript continued....
+		</title>
+		<script>
+			function findPositiveOrNegative()
+			{
+				var resultField = document.getElementById("result");
+				var noProvided = parseInt(document.getElementById("no").value);
+			
+				if(isNaN(noProvided)){
+					resultField.innerHTML = "Please provide a number..";
+					resultField.style = "color : red";
+					return;
+				}
+
+				if(noProvided > 0){
+					resultField.style = "color : blue";
+					resultField.innerHTML = "Positive";
+				}else if(noProvided < 0){
+					resultField.style = "color : green";
+					resultField.innerHTML = "Negative";
+				}else{
+					resultField.style = "color : purple";
+					resultField.innerHTML = "Zero";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			Enter a Number: <input type="text" id="no"><br /><br />
+			<button ondblclick="findPositiveOrNegative()">Positive or Negative</button>
+			<br /><br />
+			<h1 id="result"></h1>
+		</center>	
+	</body>
+</html>

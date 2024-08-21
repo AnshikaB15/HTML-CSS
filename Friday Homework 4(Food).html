@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<title>Select boxes experiments....</title>
+		<style>
+			body {
+				background-color: cyan;
+			}
+			div {
+				background-color: yellow;
+			}
+		</style>
+		<script>
+			function getDish() {
+			function get() {
+				var dishElement = document.getElementById("dish");
+				var tofElement = document.getElementById("TOF");
+				var result = document.getElementById("preferences");
+				
+				result.innerHTML = "";
+				dishElement.innerHTML = "";
+				
+				var option = document.createElement("option");
+				option.text = "--Select--";
+				option.value = "Dummy";
+				dishElement.add(option);
+				
+				if(tofElement.value == "American"){
+					var option1 = document.createElement("option");
+					option1.text = "Burger";
+					option1.value = "Burger";
+					dishElement.add(option1);
+					
+					var option2 = document.createElement("option");
+					option2.text = "Fries";
+					option2.value = "Fries";
+					dishElement.add(option2);
+					
+					var option3 = document.createElement("option");
+					option3.text = "Mac n Cheese";
+					option3.value = "C";
+					dishElement.add(option3);
+				}else if(tofElement.value == "Indian") {
+					var option1 = document.createElement("option");
+					option1.text = "Idli";
+					option1.value = "Idli";
+					dishElement.add(option1);
+				
+					var option2 = document.createElement("option");
+					option2.text = "Dosa";
+					option2.value = "Dosa";
+					dishElement.add(option2);
+					
+					var option3 = document.createElement("option");
+					option3.text = "Butter Chicken";
+					option3.value = "Butter Chicken";
+					dishElement.add(option3);
+				}else if(tofElement.value == "Mexican") {
+					var option1 = document.createElement("option");
+					option1.text = "Burritos";
+					option1.value = "Burritos";
+					dishElement.add(option1);
+				
+					var option2 = document.createElement("option");
+					option2.text = "Quesadilla";
+					option2.value = "Quesadilla";
+					dishElement.add(option2);
+					
+					var option3 = document.createElement("option");
+					option3.text = "Taco";
+					option3.value = "Taco";
+					dishElement.add(option3);
+				}
+				
+			}
+			
+			function showPreferences() {
+				var dishElement = document.getElementById("dish");
+				var tofElement = document.getElementById("TOF");
+				var result = document.getElementById("preferences");
+				
+				if(dishElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+				
+				var res = "You have selected ";
+				var selections = dishElement.selectedOptions;
+				
+				var i = 0;
+				while(i < selections.length){
+					res = res + " " + selections[i].value;
+					i = i + 1;
+				}
+	
+				res = res + " from " + tofElement.value;
+				result.innerHTML = res;
+			}
+			
+			function reset() {
+				var dishElement = document.getElementById("dish");
+				var result = document.getElementById("preferences");
+				
+				if(dishElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>Choose your Food....</h1>
+			<div>
+				Type of Food: <select id="TOF" onchange="getDish()">
+							<option value="">--Select--</option>
+							<option value="Mexican">Mexican</option>
+							<option value="Indian">Indian</option>
+							<option value="American">American</option>
+						 </select>
+				Dish name:		 
+						 <select id="dish"  onchange="reset()" 
+												onblur="showPreferences()">
+							<option value="">--Select--</option>
+						 </select>
+			</div>
+			<h1 id="preferences"></h1>
+		</center>
+	</body>
+</html>

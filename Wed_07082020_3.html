@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Factorial Program</title>
+		<script>
+			// 5! = 1*2*3*4*5 = 120
+			function findFactorial(){
+				var noProvided = parseInt(document.getElementById("no").value);
+				var resultField = document.getElementById("result");
+			
+				var fact = 1;
+				var n = 1;											
+				
+				while(n <= noProvided){
+					fact  = fact * n;
+					n = n + 1;
+				}
+				
+				
+				/*
+					fact		---> 1  2  6  24
+					n           ---> 1  2  3  4   5
+					noProvided  ---> 4
+				*/
+			
+				resultField.innerHTML =fact ;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			Enter a Number: <input type="text" id="no"><br /><br />
+			<button onclick="findFactorial()">Factorial?</button>
+			<h1 id="result"></h1>
+		</center>
+	</body>
+</html>

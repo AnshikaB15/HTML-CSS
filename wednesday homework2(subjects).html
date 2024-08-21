@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Subject Scores</title>
+		<script>
+			function total(){
+				var math = parseInt(document.getElementById("ma").value);
+				var science = parseInt(document.getElementById("sci").value);
+				var english = parseInt(document.getElementById("eng").value);
+				
+				var result = math + science + english;
+				var res = document.getElementById("result");
+				res.innerHTML = "Total is : " + result;	
+			}
+			
+			function average(){
+				var math = parseInt(document.getElementById("ma").value);
+				var science = parseInt(document.getElementById("sci").value);
+				var english = parseInt(document.getElementById("eng").value);
+				
+				var result = (math + science + english)/3;
+				var res = document.getElementById("average");
+				res.innerHTML = "Average is : " + result;	
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			Math: <input type="number" id="ma"><br />
+			Science: <input type="number" id="sci"><br />
+			English: <input type="number" id="eng"><br />
+			<button onclick="total()">Total</button><br />
+			<button onclick="average()">Average</button><br />
+			<p id="result"></p>
+			<p id="average"></p>
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

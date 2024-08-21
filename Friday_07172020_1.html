@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>JavaScript Events continued....</title>
+		<style>
+			h1 {
+				color: blue;
+			}
+		</style>
+		<script>
+			function setColor() {
+				var headingElement = document.getElementById("myHeading");
+				headingElement.innerHTML = "Wow, you finally arrived in my kingdom...";
+				headingElement.style.color = "Red";
+			}
+			
+			function resetColor() {
+				var headingElement = document.getElementById("myHeading");
+				headingElement.innerHTML = "Sorry to see you leaving my kingdom....";
+				headingElement.style.color = "Green";
+			}
+			
+			function changeImage() {
+				var imageElement = document.getElementById("myMood");
+				if(imageElement.src == "https://i.pinimg.com/originals/af/09/7f/af097fe7649416b7f13dde2e597e0bae.jpg"){
+					imageElement.src = "https://lh3.googleusercontent.com/proxy/lZobpuQPbArwODTnxb97MyCoeoWPP56bA_k_mCu7Aa0obPUMZVDuWgFNLGoCmE0wrC2GFZbznemR8WE4wnx9qD668_LbO4ZHR34CC9f0QbMAGU8I0ycrba97JJrHu8lYTCN-2ywKfCqocIWgUI509W9HTcCbPWA"
+				}else{
+					imageElement.src = "https://i.pinimg.com/originals/af/09/7f/af097fe7649416b7f13dde2e597e0bae.jpg";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1 id="myHeading" onmouseover="setColor()" onmouseout="resetColor()">
+				This is going to be some cool experiment...
+			</h1>
+			<hr />
+			<img id="myMood" onmouseover="changeImage()" 
+				width="300" height="300" 
+				src="https://i.pinimg.com/originals/af/09/7f/af097fe7649416b7f13dde2e597e0bae.jpg" />
+		</center>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Which Number is bigger</title>
+        <script>
+            function checkNumber(){
+				var firstValue = parseInt(document.getElementById("fno").value);
+				var secondValue = parseInt(document.getElementById("sno").value);
+                var resultField = document.getElementById("result");
+					
+					if(isNaN(firstValue)&& isNaN(secondValue)){
+					resultField.innerHTML = "Please provide a numbers for both fields!";
+					resultField.style = "color : red";
+					return;
+					}
+					if(isNaN(firstValue)){
+					resultField.innerHTML = "Please provide a number for first field!";
+					resultField.style = "color : red";
+					return;
+					}
+					if(isNaN(secondValue)){
+					resultField.innerHTML = "Please provide a number for second field!";
+					resultField.style = "color : red";
+					return;
+					}
+					if(firstValue > secondValue){
+                    resultField.innerHTML = firstValue + "  is greater than  " + secondValue;
+					}else{
+                    resultField.innerHTML = secondValue + "  is greater than  "+ firstValue;
+					}
+			}
+        </script>
+    </head>
+    <body>
+        <center>
+            First Number: <input type="text" id="fno"><br/>
+			Second Number: <input type="text" id="sno">
+            <br /><br />
+            <button onclick="checkNumber()">Which Number is bigger!</button>
+            <br /><br />
+            <h1 id="result"></h1>
+        </center>
+    </body>
+</html>

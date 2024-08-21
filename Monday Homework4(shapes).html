@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Select boxes experiments....</title>
+		<style>
+			body {
+				background-color: cyan;
+			}
+			div {
+				background-color: yellow;
+			}
+		</style>
+		<script>
+			function getShape() {
+				var tosElement = document.getElementById("TOS");
+				var result = document.getElementById("result");
+				result.innerHTML = "";
+				
+				
+				if(tosElement.value == "Circle"){
+					div{
+						Radius: <input type="number" id="r"> <br />  
+						<button onclick="circumference()">Circumference</button><br />
+						<button onclick="area()">Area</button><br />
+						<h1 id="area"></h1>
+						<h1 id="circumference"></h1>;
+					}
+					
+				} else if(tosElement.value == "Square") {
+					div{
+					Number of a side: <input type="number" id="ns"><br />
+					<button onclick="perimeter()">Perimeter</button><br />
+					<button onclick="area()">Area</button><br />
+					<h1 id="area"></h1>
+					<h1 id="perimeter"></h1>
+				}
+			function showPreferences() {
+				var dishElement = document.getElementById("dish");
+				var tofElement = document.getElementById("TOF");
+				var result = document.getElementById("preferences");
+				
+				if(dishElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+				
+				var res = "You have selected ";
+				var selections = dishElement.selectedOptions;
+				
+				var i = 0;
+				while(i < selections.length){
+					res = res + " " + selections[i].value;
+					i = i + 1;
+				}
+	
+				res = res + " from " + tofElement.value;
+				result.innerHTML = res;
+			}
+			
+			function reset() {
+				var dishElement = document.getElementById("dish");
+				var result = document.getElementById("preferences");
+				
+				if(dishElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>Choose your Shape....</h1>
+			<div>
+				Type of Shape: <select id="TOS" onchange="getShape()">
+							<option value="">--Select--</option>
+							<option value="Square">Square</option>
+							<option value="Circle">Circle</option>
+							<option value="Triangle">Trangle</option>
+						 </select>
+				
+			</div>
+			<h1 id="result"></h1>
+		</center>
+	</body>
+</html>

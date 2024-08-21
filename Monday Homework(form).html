@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Student Registration Form!</title>
+	</head>
+	<body>
+		
+		<center>
+			<h1 >Student Registration Form!</h1>
+			<h3>Fill out the form carefully for registration</h3>
+			</br>
+			<table style="border:5px; border-color:red; border-style:solid" cellspacing="10px" cellpadding="5px">
+				<tr style="background-color:magenta">
+				<td>
+					Student Name: <input type="text" name="Student Name" />
+				</td>
+				<td>
+					Date of Birth: <input type="date" name="dob" min="1920-01-01" max="2020-01-01"  />
+				</td>
+				<td>
+					Student Email: <input type="email" name="email" />
+				</td>	
+				<td>
+					Phone Number: <input type="tel" name="phone" 
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+				</td>
+				<td>
+					Gender:<select name="gender" size="1" >
+								<option  value="F">Female</option>
+								<option value="M">Male</option>
+								<option value="N/A">N/A</option>
+							</select>
+				</td>
+				<td>
+					Interested Courses: 
+						<input type="checkbox" name="Course" value="A">Math 101
+						<input type="checkbox" name="Course" value="B">Math 102
+						<input type="checkbox" name="Course" value="C">English 101
+						<input type="checkbox" name="Course" value="D">English 102
+						<input type="checkbox" name="Course" value="E">Creative Writing 1
+						<input type="checkbox" name="Course" value="F">Creative Weiting 2
+						<input type="checkbox" name="Course" value="G">History 101
+						<input type="checkbox" name="Course" value="H">History 102
+				</td>
+				<td>
+					Street Address: <input type="text" name="Street Address" />
+				</td>
+				<td>
+					City: <input type="text" name="City" />
+				</td>
+				<td>
+					State: <input type="text" name="State" />
+				</td>
+				<td>
+					Zip Code: <input type="text" name="Zipcode" pattern = "[0-9]{5}" />
+				</td>
+				<td>
+					Additional Comments: <textarea name="Additional Comments" rows="5" cols="100"></textarea>
+				</td>
+				<td>
+					<button onclick="alert('Thank You for Submitting the form')">Register!</button>
+				</td>
+				<td>
+					<input type="reset" value="reset" />
+				</td>
+				</tr>
+		</table>
+		</center>
+		
+		
+	</body>	
+</html>

@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>HTML JavaScript CSS together - 1</title>
+		<style>
+			#msg {
+				display: none;
+				color: red;
+			}
+			#result {
+				color: blue;
+			}
+		</style>
+		<script>
+			function checkNumber(){
+				document.getElementById("result").style.display = "none";
+				
+				var noProvided = parseInt(document.getElementById("no").value);
+				if(isNaN(noProvided)){
+					document.getElementById("b").disabled = true;
+					document.getElementById("msg").style.display = "block";
+					
+				}else{
+					document.getElementById("b").disabled = false;
+					document.getElementById("msg").style.display = "none";
+				}
+			}					
+				
+			function oddOrEven(){
+				document.getElementById("msg").style.display = "none";
+				document.getElementById("result").style.display = "block";
+				
+				var noProvided = parseInt(document.getElementById("no").value);
+				var resultField = document.getElementById("result");
+				if(noProvided % 2 == 0){
+					resultField.innerHTML = "Even";
+				}else{
+					resultField.innerHTML = "Odd";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>ODD or EVEN?</h1>
+			<p id="msg">Please provide a number</p>
+			<input type="text" id="no" onblur="checkNumber()">
+			<br /><br />
+			<button id="b" disabled onclick="oddOrEven()">Even?</button>
+			<h1 id="result"></h1>
+		</center>
+	</body>
+</html>

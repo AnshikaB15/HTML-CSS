@@ -1,0 +1,109 @@
+<html>
+	<head>
+		<title>Select boxes experiments....</title>
+		<style>
+			body {
+				background-color: cyan;
+			}
+			div {
+				background-color: yellow;
+			}
+		</style>
+		<script>
+			function getAttractions() {
+				var attractionsElement = document.getElementById("attractions");
+				var countryElement = document.getElementById("country");
+				var result = document.getElementById("preferences");
+				
+				result.innerHTML = "";
+				attractionsElement.innerHTML = "";
+				
+				var option = document.createElement("option");
+				option.text = "--Select--";
+				option.value = "Dummy";
+				attractionsElement.add(option);
+				
+				if(countryElement.value == "US"){
+					var option1 = document.createElement("option");
+					option1.text = "Las Vegas";
+					option1.value = "LV";
+					attractionsElement.add(option1);
+					
+					var option2 = document.createElement("option");
+					option2.text = "Grand Canyon";
+					option2.value = "GC";
+					attractionsElement.add(option2);
+					
+					var option3 = document.createElement("option");
+					option3.text = "Niagara Falls";
+					option3.value = "NF";
+					attractionsElement.add(option3);
+				}else if(countryElement.value == "Others") {
+					var option1 = document.createElement("option");
+					option1.text = "Dubai";
+					option1.value = "Dubai";
+					attractionsElement.add(option1);
+				
+					var option2 = document.createElement("option");
+					option2.text = "Singapore";
+					option2.value = "Singapore";
+					attractionsElement.add(option2);
+				}	
+
+				
+			}
+			
+			function showPreferences() {
+				var attractionsElement = document.getElementById("attractions");
+				var countryElement = document.getElementById("country");
+				var result = document.getElementById("preferences");
+				
+				if(attractionsElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+				
+				var res = "You have selected ";
+				var selections = attractionsElement.selectedOptions;
+				
+				var i = 0;
+				while(i < selections.length){
+					res = res + " " + selections[i].value;
+					i = i + 1;
+				}
+	
+				res = res + " attraction in " + countryElement.value;
+				result.innerHTML = res;
+			}
+			
+			function reset() {
+				var attractionsElement = document.getElementById("attractions");
+				var result = document.getElementById("preferences");
+				
+				if(attractionsElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>Choose your favorite destinations....</h1>
+			<div>
+				Country: <select id="country" onchange="getAttractions()">
+							<option value="">--Select--</option>
+							<option value="India">India</option>
+							<option value="US">USA</option>
+							<option value="Others">Other</option>
+						 </select>
+				Attraction(s):		 
+						 <select id="attractions" multiple onchange="reset()" 
+												onblur="showPreferences()">
+							<option value="">--Select--</option>
+						 </select>
+			</div>
+			<h1 id="preferences"></h1>
+		</center>
+	</body>
+</html>

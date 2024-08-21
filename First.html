@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>JavaScript continued...</title>
+        <script>
+            function checkStatus(){
+                var resultField = document.getElementById("result");
+
+                var noProvided = parseInt(document.getElementById("no").value);
+                if(noProvided < 0){
+                    resultField.innerHTML = "Given number is negative";
+                }else{
+                    resultField.innerHTML = "Giver number is positive";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            Enter a number: <input type="text" id="no">
+            <br /><br />
+            <button onclick="checkStatus()">Positive or Negative</button>
+            <br /><br />
+            <h1 id="result"></h1>
+        </center>
+    </body>
+</html>
+
+
+
+

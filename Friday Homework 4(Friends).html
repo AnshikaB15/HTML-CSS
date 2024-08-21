@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<title>Select boxes experiments....</title>
+		<style>
+			body {
+				background-color: cyan;
+			}
+			div {
+				background-color: yellow;
+			}
+		</style>
+		<script>
+			function getFriends() {
+				var friendsElement = document.getElementById("friends");
+				var tofElement = document.getElementById("TOF");
+				var result = document.getElementById("preferences");
+				
+				result.innerHTML = "";
+				friendsElement.innerHTML = "";
+				
+				var option = document.createElement("option");
+				option.text = "--Select--";
+				option.value = "Dummy";
+				friendsElement.add(option);
+				
+				if(tofElement.value == "School Friends"){
+					var option1 = document.createElement("option");
+					option1.text = "A";
+					option1.value = "A";
+					friendsElement.add(option1);
+					
+					var option2 = document.createElement("option");
+					option2.text = "B";
+					option2.value = "B";
+					friendsElement.add(option2);
+					
+					var option3 = document.createElement("option");
+					option3.text = "C";
+					option3.value = "C";
+					friendsElement.add(option3);
+				}else if(tofElement.value == "Other Friends") {
+					var option1 = document.createElement("option");
+					option1.text = "X";
+					option1.value = "X";
+					friendsElement.add(option1);
+				
+					var option2 = document.createElement("option");
+					option2.text = "Y";
+					option2.value = "Y";
+					friendsElement.add(option2);
+					
+					var option3 = document.createElement("option");
+					option3.text = "Z";
+					option3.value = "Z";
+					friendsElement.add(option3);
+				}	
+
+				
+			}
+			
+			function showPreferences() {
+				var friendsElement = document.getElementById("friends");
+				var tofElement = document.getElementById("TOF");
+				var result = document.getElementById("preferences");
+				
+				if(friendsElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+				
+				var res = "You have selected ";
+				var selections = friendsElement.selectedOptions;
+				
+				var i = 0;
+				while(i < selections.length){
+					res = res + " " + selections[i].value;
+					i = i + 1;
+				}
+	
+				res = res + " from " + tofElement.value;
+				result.innerHTML = res;
+			}
+			
+			function reset() {
+				var friendsElement = document.getElementById("friends");
+				var result = document.getElementById("preferences");
+				
+				if(friendsElement.value == "Dummy") {
+					result.innerHTML = "";
+					return;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>Choose your a Friend....</h1>
+			<div>
+				Type of Friends: <select id="TOF" onchange="getFriends()">
+							<option value="">--Select--</option>
+							<option value="School Friends">School Friends</option>
+							<option value="Other Friends">Other Friends</option>
+						 </select>
+				Friend name:		 
+						 <select id="friends"  onchange="reset()" 
+												onblur="showPreferences()">
+							<option value="">--Select--</option>
+						 </select>
+			</div>
+			<h1 id="preferences"></h1>
+		</center>
+	</body>
+</html>

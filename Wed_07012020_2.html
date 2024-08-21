@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Math Test on my Computer!</title>
+		<script>
+			function add(){
+				alert(parseInt(document.getElementById("fno").value) + 
+						parseInt(document.getElementById("sno").value));
+			}
+			
+			function subtract(){
+				var firstValue = parseInt(document.getElementById("fno").value);
+				var secondValue = parseInt(document.getElementById("sno").value);
+				
+				var result = firstValue - secondValue;
+				alert("Subtraction result is : " + result);
+			}
+			
+			function multiply(){
+				var firstValue = parseInt(document.getElementById("fno").value);
+				var secondValue = parseInt(document.getElementById("sno").value);
+				
+				var result = firstValue * secondValue;
+				alert("Multiplication result is : " + result);
+			}
+			
+			function divide(){
+				var firstValue = parseInt(document.getElementById("fno").value);
+				var secondValue = parseInt(document.getElementById("sno").value);
+				
+				var result = firstValue / secondValue;
+				var res = document.getElementById("result");
+				res.innerHTML = "Division result is : " + result;		
+			}
+			
+			function remainder(){
+				var firstValue = parseInt(document.getElementById("fno").value);
+				var secondValue = parseInt(document.getElementById("sno").value);
+				
+				var result = firstValue % secondValue;
+				var res = document.getElementById("result");
+				res.innerHTML = "Division - Remainder (Modulus) result is : " + result;		
+			}
+			
+			function exponentiation(){
+				var firstValue = parseInt(document.getElementById("fno").value);
+				var secondValue = parseInt(document.getElementById("sno").value);
+				
+				var result = firstValue ** secondValue;
+				var res = document.getElementById("result");
+				res.innerHTML = "Exponentiation result is : " + result;		
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			First Number: <input type="number" id="fno"><br />
+			Second Number: <input type="number" id="sno"><br />
+			<button onclick="add()">Add</button><br />
+			<button onclick="subtract()">Subtract</button><br />
+			<button onclick="multiply()">Multiply</button><br />
+			<button onclick="divide()">Divide & Get Quotient</button><br />
+			<button onclick="remainder()">Divide & Get Remainder</button><br />
+			<button onclick="exponentiation()">Exponentiation</button><br />
+			<p id="result"></p> 
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

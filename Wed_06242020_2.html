@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>
+			My first JavaScript example!
+		</title>
+	</head>
+	<body>
+		<input type="text" id="name" />
+		<br /><br />
+		<button onclick="alert('Hello')">Click Me!</button>
+		<button ondblclick="alert('Hello, you did it')">Double Click Me!</button>
+		<br /><br />
+		<button onclick="document.getElementById('xyz').innerHTML='Hello'">Click and get on HTML Page itself</button>
+		<p id='xyz'></p>
+		<button onclick="document.getElementById('xyz').innerHTML=''">Clear the HTML content NOW!</button>
+		<br />
+		<button onclick="alert(document.getElementById('name').value)">Show text in Popup</button>
+	</body>
+</html>

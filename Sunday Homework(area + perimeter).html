@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Area + Perimeter</title>
+		<script>
+			function perimeter(){
+				var side = parseInt(document.getElementById("ns").value);
+				
+				var perimeter = side * 4;
+				var res = document.getElementById("perimeter");
+				res.innerHTML = "Perimeter is : " + perimeter;	
+			}
+			
+			function area(){
+				var side = parseInt(document.getElementById("ns").value);
+				
+				var area = side * side;
+				var res = document.getElementById("area");
+				res.innerHTML = "Area is : " + area;	
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			Number of a side: <input type="number" id="ns"><br />
+			<button onclick="perimeter()">Perimeter</button><br />
+			<button onclick="area()">Area</button><br />
+			<h1 id="area"></h1>
+			<h1 id="perimeter"></h1>
+		</center>
+	</body>
+</html>

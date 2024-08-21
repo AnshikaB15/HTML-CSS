@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Image Big, Small by using JavaScript functions</title>
+		<script>
+			function big(){
+				document.getElementById("gc").width = "700";
+				document.getElementById("gc").height = "700";
+			}
+			
+			function small(){
+				document.getElementById("gc").width = "100";
+				document.getElementById("gc").height = "100";
+			}
+			
+			function normal(){
+				document.getElementById("gc").width = "300";
+				document.getElementById("gc").height = "300";
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<img id="gc" src="https://www.nps.gov/grca/planyourvisit/images/powell-pt-640.jpg" width="300" height="300" />
+			<br /><br />
+			<button onclick="big()">Big</button>
+			<button onclick="small()">Small</button>
+			<button onclick="normal()">Normal</button>
+		</center>
+	</body>
+</html>

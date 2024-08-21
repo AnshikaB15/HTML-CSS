@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Leap Year Program</title>
+	<script>
+		/*
+			1600 - Leap
+			1800 - Not Leap
+			2000 - Leap
+			2020 - Leap
+			2021 - Not Leap	
+		*/
+		function findLeap(){
+			var resultField = document.getElementById("result");
+			var yearProvided = parseInt(document.getElementById("year").value);
+			
+			if(yearProvided % 100 == 0){
+				if(yearProvided % 400 == 0){
+					resultField.innerHTML = "Leap Year";
+				}else{
+					resultField.innerHTML = "Not Leap Year";	
+				}
+			}else{
+				if(yearProvided % 4 == 0){
+					resultField.innerHTML = "Leap Year";
+				}else{
+					resultField.innerHTML = "Not Leap Year";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+		Please enter an Year: <input type="text" id="year"><br /><br />
+		<button onclick="findLeap()">Leap?</button>
+		<h1 id="result"></h1>
+	</center>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Login</title>
+		<style>
+			#detailsNotProvidedMessage, #incorrectDetailsProvidedMessage {
+				display: none;
+				color: red;
+			}
+			#result {
+				display: none;
+				color: green;
+			}
+		</style>
+		<script>
+			function checkLogin () {
+				var unameProvided = document.getElementById("uname").value;
+				var pwdProvided = document.getElementById("pwd").value;
+				
+				if(unameProvided == "" || pwdProvided == ""){
+					document.getElementById("b").disabled = true;
+					document.getElementById("incorrectDetailsProvidedMessage").style.display = "none";	
+					document.getElementById("result").style.display = "none";
+				}else{
+					document.getElementById("b").disabled = false;
+				}
+			}
+			function login(){
+				var unameProvided = document.getElementById("uname").value;
+				var pwdProvided = document.getElementById("pwd").value;
+				
+				if(unameProvided.length > 6  && pwdProvided.length >6 )  {
+					document.getElementById("incorrectDetailsProvidedMessage").style.display = "none";
+					document.getElementById("result").style.display = "block";
+				}else{
+					document.getElementById("incorrectDetailsProvidedMessage").style.display = "block";
+					document.getElementById("result").style.display = "none";
+				}
+			
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>LOGIN</h1>
+			<p id="incorrectDetailsProvidedMessage">Please provide valid credentials</p>
+			
+			<br /><br />
+			Username: <input type="text" id="uname" onblur="checkLogin()">
+			<br /><br />
+			Password: <input type="password" id="pwd" onblur="checkLogin()">
+			<br /><br />
+			<button id="b" disabled onclick="login()">Login</button>
+			<h1 id="result">Success. Welcome to our website. Enjoy.</h1>
+		</center>
+	</body>
+</html>

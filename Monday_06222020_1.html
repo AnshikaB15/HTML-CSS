@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Inputs from User</title>
+	</head>
+	<body>
+		<h1>Registration Form!</h1>
+		<form>
+			Name: <input type="text" name="studentName" />
+			<br /><br />
+			Age: <input type="number" name="age" min="13" max="18" step="0.5" />
+			<br /> <br />
+			Date of Birth: <input type="date" name="dob" min="2005-01-01" max="2020-06-22"  />
+			<br /><br />
+			Email: <input type="email" name="email" />
+			<br /> <br />
+			Phone Number: <input type="tel" name="phone" 
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+			<br /><br />
+			Gender: <input type="radio" name="gender" value="M">Male
+					<input type="radio" name="gender" value="F">Female
+			<br /><br />
+			Hobbies: <select name="hobbies" size="3" multiple>
+						<option value="A">Movies</option>
+						<option value="B">Sports</option>
+						<option value="C">Hiking</option>
+						<option value="D">Cooking</option>
+						<option value="E">Gaming</option>
+						<option value="F">Reading</option>
+						<option value="G">Troubling Father</option>
+					 </select>
+			<br /><br />
+			Interested Locations: 
+					<input type="checkbox" name="location" value="A">Peoria
+					<input type="checkbox" name="location" value="B">Scottsdale
+					<input type="checkbox" name="location" value="C">Phoenix
+					<input type="checkbox" name="location" value="D">Chandler
+			<br /><br />
+			Address: <textarea name="address" rows="5" cols="25"></textarea>
+			<br /><br />
+			<input type="reset" value="Reset" />
+			<input type="button" name="Register" value="Register" />				 
+		</form>
+	</body>	
+</html>

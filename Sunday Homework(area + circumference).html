@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Area + Circumference</title>
+		<script>
+			function circumference(){
+				var radius = parseInt(document.getElementById("r").value);
+				
+				var circumference= radius * 2 * 3.14;
+				var res = document.getElementById("circumference");
+				res.innerHTML = "Circumference is : " + circumference;	
+			}
+			
+			function area(){
+				var radius = parseInt(document.getElementById("r").value);
+				
+				var area = 3.14* radius* radius;
+				var res = document.getElementById("area");
+				res.innerHTML = "Area is : " + area;	
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			Radius: <input type="number" id="r"><br />
+			<button onclick="circumference()">Circumference</button><br />
+			<button onclick="area()">Area</button><br />
+			<h1 id="area"></h1>
+			<h1 id="circumference"></h1>
+		</center>
+	</body>
+</html>

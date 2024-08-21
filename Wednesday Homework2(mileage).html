@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Miles Driven</title>
+		<script>
+			function total(){
+				var start = parseInt(document.getElementById("start").value);
+				var end = parseInt(document.getElementById("end").value);
+				
+				var result = end-start;
+				var res = document.getElementById("result");
+				res.innerHTML = "Total miles driven is : " + result;	
+			}
+			
+		</script>
+	</head>
+	<body>
+		<center>
+			Start Mileage: <input type="number" id="start"><br />
+			End Mileage: <input type="number" id="end"><br />
+			<button onclick="total()">Total Miles</button><br />
+			<p id="result"></p>
+		</center>
+	</body>
+</html>
